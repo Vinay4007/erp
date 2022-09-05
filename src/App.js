@@ -27,20 +27,23 @@ import Pk from "./Component/Pk";
 import Es from "./Component/Es";
 import DownloadReceipt from "./Component/DownloadReceipt";
 import Cultural from "./Component/Cultural";
+import Navbar from './Component/Navbar';
+
 
 
 const App = () => {
-  
-  return( 
+ return( 
     <div className='print'>
     
 
       <Router>
         <Route>
           <Image/>
+          <Navbar />
+          <Route path='/' />
         
           <Route exact path = "/" component={Home} />
-          <Route path = "/gl" component={Gl} />
+          <Route path = "/transactions" component={Gl} />
           <Route path = "/ha" component={Ha} />
           <Route path = "/others" component={Others} />
 
@@ -77,7 +80,7 @@ return(
     
     <img src={img1} width='150px' alt=''/>
     <div class = "form-check form-check-inline">
-    <h1 className='title'>Indian Institute Of Technology Tirupati</h1>
+    <h1 className='title'><b>Indian Institute Of Technology Tirupati</b></h1>
     </div>
 
   </div>
