@@ -12,29 +12,25 @@ const Home = () =>{   //this is general ledger component
         <div class="col">
         <br/><br/><br/>
         
-        <br/><br/><br/>
-        {/* <a href="/gl" class="btn btn-info btn-lg">Transaction</a> */}
-        <h2>Finance  -  Accounts</h2>
-        <br/><br/>
-        
-        <br/><br/>
-        <div>
-          {/* <a href="/cultural" class="btn btn-info btn-lg">Academic Section </a> */}
           
-        </div>
+        <h1>Finance - Accounts</h1>
+        <br/><br/>
+        
+        <br/><br/>
+        
         
         <br/><br/>
         <br/><br/>
-        {/* <a href="/others" class="btn btn-info btn-lg">Others</a> */}
+        
         <br/><br/><br/>
         
         </div>
-        <div class="col">
+        <div class="col"><a href="/cont" class="pull-right">Contact Us</a>
         </div>
+       </div>
       </div>
-      </div>
-
-        </div>
+        
+    </div>
         
       );
 };

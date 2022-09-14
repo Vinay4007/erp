@@ -27,12 +27,17 @@ import Pk from "./Component/Pk";
 import Es from "./Component/Es";
 import DownloadReceipt from "./Component/DownloadReceipt";
 import Cultural from "./Component/Cultural";
+import contact from './Component/contact';
+import Applyforloan from './Component/Applyforloan';
 import Navbar from './Component/Navbar';
-
+import Signup from './Component/signup';
+import Login from './Component/login';
+//import Errorpage from './Component/Errorpage';
 
 
 const App = () => {
- return( 
+  
+  return( 
     <div className='print'>
     
 
@@ -40,9 +45,10 @@ const App = () => {
         <Route>
           <Image/>
           <Navbar />
-          <Route path='/' />
         
-          <Route exact path = "/" component={Home} />
+          <Route  path = "/home" component={Home} />
+          <Route exact path = "/" component={Signup} />
+          <Route path = "/login" component={Login} />
           <Route path = "/transactions" component={Gl} />
           <Route path = "/ha" component={Ha} />
           <Route path = "/others" component={Others} />
@@ -63,7 +69,13 @@ const App = () => {
           <Route path = "/es" component={Es}/>
           <Route path = "/downreceipt" component={DownloadReceipt}/>
           <Route path = "/cultural" component={Cultural}/>
+          <Route path = "/cont" component={contact}/>
+          <Route path = "/applyforloan" component={Applyforloan}/>
+          {/* <Route path = "" component={Errorpage}/> */}
           </Route>
+          {/* <Route>
+            <Errorpage/>
+          </Route> */}
       </Router>
     </div> 
      
@@ -80,7 +92,7 @@ return(
     
     <img src={img1} width='150px' alt=''/>
     <div class = "form-check form-check-inline">
-    <h1 className='title'><b>Indian Institute Of Technology Tirupati</b></h1>
+    <h1 className='title'>Indian Institute Of Technology Tirupati</h1>
     </div>
 
   </div>

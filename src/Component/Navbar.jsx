@@ -36,6 +36,9 @@ function Navbar() {
                 </li>
               );
             })}
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
           </ul>
         </nav>
       </IconContext.Provider>
