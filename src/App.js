@@ -17,22 +17,34 @@ import Curp from "./Component/Curp";
 
 import Eal from "./Component/Eal";
 import Lohis from "./Component/Lohis";
-import Newlo from "./Component/Newlo";
+import NewLo from "./Component/Newlo";
 import Adv from "./Component/Adv";
 
 import CulEx from "./Component/Culex";
 import Dpb from "./Component/Dpb";
 import Pk from "./Component/Pk";
 
+import PayCul from "./Component/paycul";
+
 import Es from "./Component/Es";
 import DownloadReceipt from "./Component/DownloadReceipt";
-import Cultural from "./Component/Cultural";
+import Budget from "./Component/Budget";
 import contact from './Component/contact';
 import Applyforloan from './Component/Applyforloan';
-import Navbar from './Component/Navbar';
 import Signup from './Component/signup';
 import Login from './Component/login';
-//import Errorpage from './Component/Errorpage';
+// import Errorpage from './Component/Errorpage';
+
+import Payments1 from './Component/Payments1';
+import Payments2 from './Component/payments2';
+import CHECKSTAT from './Component/checkstaths';
+import Newadvance from './Component/Newadvance';
+import Cultural from './Component/Cultural';
+
+import Request from './Component/Request';
+import Scholar from './Component/scholar';
+import SendReceipt from './Component/recscho';
+import budget1 from './Component/budget1';
 
 
 const App = () => {
@@ -44,11 +56,13 @@ const App = () => {
       <Router>
         <Route>
           <Image/>
-          <Navbar />
+          
         
-          <Route  path = "/home" component={Home} />
+          
           <Route exact path = "/" component={Signup} />
           <Route path = "/login" component={Login} />
+          
+          <Route  path = "/home" component={Home} />
           <Route path = "/transactions" component={Gl} />
           <Route path = "/ha" component={Ha} />
           <Route path = "/others" component={Others} />
@@ -59,23 +73,36 @@ const App = () => {
 
           <Route path = "/eal" component={Eal} />
           <Route path = "/lh" component={Lohis} />
-          <Route path = "/newloan" component={Newlo} />
+          <Route path = "/newloan" component={NewLo} />
           <Route path = "/adv" component={Adv} />
 
           <Route path = "/ce" component={CulEx} />
-          <Route path = "/dpb" component={Dpb} />
+          <Route path = "/dpb" component={budget1} />
           <Route path = "/pk" component={Pk} />
 
           <Route path = "/es" component={Es}/>
           <Route path = "/downreceipt" component={DownloadReceipt}/>
-          <Route path = "/cultural" component={Cultural}/>
+          <Route path = "/budget" component={Budget}/>
           <Route path = "/cont" component={contact}/>
           <Route path = "/applyforloan" component={Applyforloan}/>
+          
+
+          <Route path = "/pay1" component={Payments1}/>
+          <Route path = "/pay2" component={Payments2}/>
+          <Route path = "/chs" component={CHECKSTAT}/>
+          <Route path = "/adv" component={Newadvance}/>
+          <Route path = "/cultural" component={Cultural}/>
+
+          <Route path = "/request" component={Request}/>
+          <Route path = "/paycul" component={PayCul}/>
+          <Route path = "/scholar" component={Scholar}/>
+          <Route path = "/sendreceipt" component={SendReceipt}/>
           {/* <Route path = "" component={Errorpage}/> */}
-          </Route>
-          {/* <Route>
+          {/* <Route path="*">
             <Errorpage/>
           </Route> */}
+          </Route>
+          
       </Router>
     </div> 
      
@@ -91,7 +118,7 @@ return(
   <div className='main'>
     
     <img src={img1} width='150px' alt=''/>
-    <div class = "form-check form-check-inline">
+    <div className = "form-check form-check-inline">
     <h1 className='title'>Indian Institute Of Technology Tirupati</h1>
     </div>
 
