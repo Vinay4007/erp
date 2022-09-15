@@ -1,12 +1,12 @@
 import React, {useState} from "react";
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
 // import { useHistory} from 'react-router-dom';
 
 
-const NewLo = () =>{   
+const Newadvance = () =>{   
 //    const history = useHistory();
-   const [loan,setLoan] = useState({
-        name:"",email:"",phone:"",loanreq:""
+   const [adv,setadv] = useState({
+        name:"",email:"",phone:"",advancereq:""
     });
 
     let name,value;
@@ -16,28 +16,28 @@ const NewLo = () =>{
         name = e.target.name;
         value = e.target.value;
 
-        setLoan({...loan,[name]:value});
+        setadv({...adv,[name]:value});
     }
 
     const PostData = async(e) => {
         e.preventDefault();
 
-    const { name,email,phone,loanreq} = loan;
+    const { name,email,phone,advancereq} = adv;
 
-   const res = await fetch("/newloan", {
+   const res = await fetch("/adv", {
     method: "POST",
     headers: {
         "Content-Type" : "application/json"
     },
     body: JSON.stringify({
-     name, email,phone,loanreq
+     name, email,phone,advancereq
     })
    });
 
    const data = await res.json();
 
    if(res.status === 422 || !data){
-    window.alert("fill all the fields");
+    window.alert("Fill all the fields");
     //console.log("INVALID REGISTRATION");
  } else{
       window.alert("Request Sent Successfully");
@@ -49,18 +49,16 @@ const NewLo = () =>{
     }
 
     return (
-       <div className='newlo'>
-        <Navbar />
+       <div className='newadv'>
         
         
-        <section class="loandata">
+        <section class="advdata">
 
    
-    <h2 class="h1-responsive font-weight-bold text-center ">Request Loan</h2>
+    <h2 class="h1-responsive font-weight-bold text-center ">Request Advance</h2>
    
-   <br/>
     
-
+        <br/>
     <div class="row">
 
       
@@ -75,7 +73,7 @@ const NewLo = () =>{
                         <div class="md-form mb-0">
                         <label for="name" class="">Your name</label>
                             <input type="text" id="name" name="name" class="form-control"
-                                value={loan.name}
+                                value={adv.name}
                                 onChange={handleInputs}
                                 placeholder="Your Name"
                             />
@@ -89,7 +87,7 @@ const NewLo = () =>{
                         <div class="md-form mb-0">
                         <label for="email" class="">Your email</label>
                             <input type="text" id="email" name="email" class="form-control"
-                                value={loan.email}
+                                value={adv.email}
                                 onChange={handleInputs}
                                 placeholder="Your Email"
                             />
@@ -100,14 +98,14 @@ const NewLo = () =>{
 
                 </div>
                
-
-               <br/>
+                <br/>
+               
                 <div class="row">
                     <div class="col-md-5">
                         <div class="md-form mb-0">
                         <label for="phone" class="">Phone</label>
                             <input type="text" id="phone" name="phone" class="form-control"
-                                value={loan.phone}
+                                value={adv.phone}
                                 onChange={handleInputs}
                                 placeholder="Your Number"
                             />
@@ -124,9 +122,9 @@ const NewLo = () =>{
                     <div class="col-md-12">
 
                         <div class="md-form">
-                        <label for="loanreq">Request Message</label>
-                            <input type="text" id="loanreq" name="loanreq" class="form-control"
-                                value={loan.loanreq}
+                        <label for="advancereq">Request Message</label>
+                            <input type="text" id="advancereq" name="advancereq" class="form-control"
+                                value={adv.advancereq}
                                 onChange={handleInputs}
                                 placeholder="your Request"
                             />
@@ -138,6 +136,7 @@ const NewLo = () =>{
             
 
             </form>
+
             <br/><br/>
 
             <div className="form-group form-button text-center">
@@ -146,9 +145,6 @@ const NewLo = () =>{
                     />
                 </div>
                 <br/><br/>
-            
-
-            
         </div>
 
 
@@ -163,8 +159,6 @@ const NewLo = () =>{
                     <p>academic@iittp.ac.in</p>
                 </li>
             </ul>
-            <br/><br/><br/><br/><br/><br/><br/>
-            
         </div>
 
 
@@ -176,4 +170,4 @@ const NewLo = () =>{
       );
 };
 
-export default NewLo;
+export default Newadvance;
