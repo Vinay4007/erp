@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { NavLink, useHistory} from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 //import React from 'react';
 
 const Signup = () =>{
@@ -35,12 +35,15 @@ const PostData = async(e) => {
 
    const data = await res.json();
    
-   if(data.status === 422 || !data){
-      window.alert("INVALID REGISTRATION");
+   if(res.status === 422){
+      window.alert("fill all the fields");
       console.log("INVALID REGISTRATION");
-   } else{
-    window.alert("REGISTRATION SUCCESS");
-      console.log("Successfull REGISTRATION");
+   }else if(!data) {
+    window.alert("INVALID REGISTRATION");
+   }
+   else{
+        window.alert("REGISTRATION SUCCESS");
+        console.log("Successfull REGISTRATION");
 
       history.push("/login")
    }
@@ -50,56 +53,94 @@ const PostData = async(e) => {
     return(
         <>
           <section className="signup">
+            <div class="row">
+            <div class="col"></div>
+                <div class="col">
             <div classname="container mt-5">
              <div classname="signup-content">
              <div classname="signup-form">
-                <h2 className="form-title">Sign up</h2>
+                <br/>
+                <h2 className="form-title text-center">Sign up</h2>
+                <br/>
                 <form method="POST" classname="register-form" id="register-form">
-                <div className="form-group">
-                    <input type="text" name="name" id="name" autoComplete="off"
-                     value={user.name}
-                     onChange={handleInputs}
-                     placeholder="Your Name"
-                    />
+                
+                
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="md-form mb-0">
+                        <label for="name" class="">Name</label>
+                            <input type="text" name="name" id="name" class="form-control" autoComplete="off"
+                                value={user.name}
+                                onChange={handleInputs}
+                                placeholder="Your Name"
+                            />
+                            
+                        </div>
+                    </div>
                 </div>
-
-                <div className="form-group">
-                    <input type="text" name="email" id="email" autoComplete="off" 
-                      value={user.email}
-                      onChange={handleInputs}
-                     placeholder="Your Email"
-                    />
+                <br/>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="md-form mb-0">
+                        <label for="email" class="">Email</label>
+                            <input type="text" name="email" id="email" class="form-control" autoComplete="off"
+                                value={user.email}
+                                onChange={handleInputs}
+                               placeholder="Your Email"
+                            />
+                            
+                        </div>
+                    </div>
                 </div>
-
-                <div className="form-group">
-                    <input type="number" name="phone" id="phone" autoComplete="off" 
-                        value={user.phone}
-                        onChange={handleInputs}
-                     placeholder="Your Number"
-                    />
+                <br/>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="md-form mb-0">
+                        <label for="phone" class="">Phone Number</label>
+                            <input type="number" name="phone" id="phone" class="form-control" autoComplete="off"
+                                value={user.phone}
+                                onChange={handleInputs}
+                               placeholder="Phone Number"
+                            />
+                            
+                        </div>
+                    </div>
                 </div>
-
-                <div className="form-group">
-                    <input type="text" name="password" id="password" autoComplete="off" 
-                        value={user.password}
-                        onChange={handleInputs}
-                     placeholder="Your Password"
-                    />
+                <br/>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="md-form mb-0">
+                        <label for="password" class="">Password</label>
+                            <input type="text" name="password" id="password" class="form-control" autoComplete="off"
+                                value={user.password}
+                                onChange={handleInputs}
+                                placeholder="Password"
+                            />
+                            
+                        </div>
+                    </div>
                 </div>
-
+                <br/>
+                
                 <div className="form-group form-button">
-                    <input type="submit" name="signup" id="signup" className="form-submit"
-                     value = "register" onClick={PostData}
-                    />
+                        <input type="submit" name="signup" id="signup" className="form-submit"
+                        value = "Register" onClick={PostData}
+                        />
+                    
                 </div>
                 </form>
              </div>
-            
-            <h1>IF ALREADY REGISTERED</h1>
-
              <br/><br/>
-             <a class="btn btn-primary" href="/login" role="button">Please Login</a>
+            
              </div>
+            </div>
+            </div>
+            <div class="col">
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <h6>IF ALREADY REGISTERED  <a class="btn btn-primary" href="/login" role="button">Login Here</a></h6>
+                <br/>
+            </div>
             </div>
           </section>
 
