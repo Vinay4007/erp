@@ -1,9 +1,11 @@
 import React from "react";
+import Navbar from './Navbar';
 
 const GeneralLedger = () =>{   //this is general ledger component
    
     return (
        <div className='gl'>
+        <Navbar />
 
 <div class= "p-3 bg-white text-dark">
 <br></br>

@@ -21,7 +21,7 @@ export const SidebarData =[
     },
     {
         title: 'Budgets',
-        path:'/cultural',
+        path:'/budget',
         icon: <IoIcons.IoIosPaper />,
         cName: 'nav-text',
 

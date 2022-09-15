@@ -3,9 +3,9 @@ import React, {useState} from "react";
 import Navbar from './Navbar';
 
 
-const Compr = () =>{   
+const CHECKSTAT = () =>{   
 //    const history = useHistory()
-   const [tutfee,settut] = useState({
+   const [fee,setfee] = useState({
     name:"",branch:"",semester:""
    })
    let name,value;
@@ -14,15 +14,15 @@ const Compr = () =>{
     console.log(e);
     name = e.target.name;
     value = e.target.value;
-    settut({...tutfee,[name]:value});
+    setfee({...fee,[name]:value});
    }
 
    const PostData = async(e) => {
     e.preventDefault();
 
-    const {name,branch,semester} = tutfee;
+    const {name,branch,semester} = fee;
 
-    const res = await fetch("/tutfeestatus",{
+    const res = await fetch("/hamfeestatus",{
       method:"POST",
       headers:{
         "Content-Type":"applications/json"
@@ -53,7 +53,7 @@ const Compr = () =>{
         <div class="row">
         <div class="col"></div>
         <div class="col">
-        <h3>Check your Tution Fee status</h3> <br></br>
+        <h3>Check your hostel and mess fee status</h3> <br></br>
           <form method="POST" className="sem-form" id="sem-form">
           
 
@@ -62,8 +62,8 @@ const Compr = () =>{
                         <div class="md-form mb-0">
                         <label htmlFor="name" class="">Full name</label>
 
-                            <input type="text" name="name" id="name" class="form-control" autoComplete="off"
-                                value={tutfee.name}
+                            <input type="text" name="name" id="name" class="form-control" autoComplete="on"
+                                value={fee.name}
                                 onChange={handleInputs}
                                 placeholder="Full Name"
                             />
@@ -78,7 +78,7 @@ const Compr = () =>{
                         <div class="md-form mb-0">
                         <label htmlFor="branch" class="">Branch</label>
                             <input type="text" name="branch" id="branch" class="form-control" autoComplete="off"
-                            value={tutfee.branch}
+                            value={fee.branch}
                             onChange={handleInputs}
                             placeholder="Branch"
                             />
@@ -94,7 +94,7 @@ const Compr = () =>{
                         <div class="md-form mb-0">
                         <label htmlFor="semester" class="">Semester</label>
                             <input type="number" name="semester" id="semester" class="form-control" autoComplete="off"
-                            value={tutfee.semester}
+                            value={fee.semester}
                             onChange={handleInputs}
                             placeholder="Sem"
                             />
@@ -114,8 +114,9 @@ const Compr = () =>{
             </div>
             
          </div>
+         <br/>
           
-        <br/>
+        
         </form>
         
         
@@ -132,4 +133,4 @@ const Compr = () =>{
       );
 };
 
-export default Compr;
+export default CHECKSTAT;

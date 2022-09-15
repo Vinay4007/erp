@@ -7,12 +7,16 @@ import ExpenseTotal from './budjettracker/ExpenseTotal';
 import ExpenseList from './budjettracker/ExpenseList';
 import AddExpenseForm from './budjettracker/AddExpenseForm';
 import RemainingBudget from './budjettracker/Remaining';
+import Navbar from './Navbar';
 
 const App = () => {
 	return (
+		
 		<AppProvider>
+			<Navbar />
 			<div className='container'>
-				<h1 className='mt-3'> Department Transactions</h1>
+			
+				<h1 className='text-center'> Department Transactions</h1>
 				<div className='row mt-3'>
 					<div className='col-sm'>
 						<Budget />

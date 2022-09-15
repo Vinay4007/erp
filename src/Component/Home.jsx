@@ -1,9 +1,12 @@
 import React from "react";
+import Navbar from './Navbar';
   
-const Home = () =>{   //this is general ledger component
+const Home = () =>{  
    
     return (
+      
        <div className='home'>
+        <Navbar />
         <div class="container text-center">
         <div class="row">
         <div class="col">
