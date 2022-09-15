@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { NavLink, useHistory} from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 //import React from 'react'
 
 const Login = () => {
@@ -34,14 +34,16 @@ const Login = () => {
         });
 
         const data = await res.json();
-        if(data.status===422 || !data){
-            window.alert("INVALID CREDENTIALS");
+        if(res.status===422 || !data){
+            window.alert("Invalid CREDENTIALS");
             console.log("INVALID CREDENTIALS");
-        }else{
+        }
+        else{
             window.alert("Login Successful");
             console.log("Successful Login");
+            history.push("/home")
         }
-        history.push("/home")
+        
     }
 
     return(
@@ -50,32 +52,54 @@ const Login = () => {
             <div classname="container mt-5">
              <div classname="signin-content">
              <div classname="signin-form">
-                <h2 className="form-title">Sign up</h2>
+                <br/>
+                <h2 className="form-title text-center">Sign in</h2>
+                <br/>
                 <form method="POST" classname="register-form" id="register-form">
+                <div class="row">
+                    <div class="col"></div>
                 
-
-                <div className="form-group">
-                    <input type="text" name="email" id="email" autoComplete="off" 
-                    value={user.email}
-                    onChange={handleInputs}
-                     placeholder="Your Email"
-                    />
+                <div class="col">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="md-form mb-0">
+                        <label for="email" class="">Enter Email</label>
+                            <input type="text" name="email" id="email" class="form-control" autoComplete="on"
+                                value={user.email}
+                                onChange={handleInputs}
+                               placeholder="Email"
+                            />
+                            
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="md-form mb-0">
+                        <label for="password" class="">Enter Password</label>
+                            <input type="text" name="password" id="password" class="form-control" autoComplete="off"
+                                value={user.password}
+                                onChange={handleInputs}
+                               placeholder="Password"
+                            />
+                            
+                        </div>
+                    </div>
                 </div>
 
+                <br/><br/>
                 
-
-                <div className="form-group">
-                    <input type="text" name="password" id="password" autoComplete="off" 
-                    value={user.password}
-                    onChange={handleInputs}
-                     placeholder="Your Password"
-                    />
                 </div>
-
+                <div class="col">
+                    <br/><br/><br/><br/><br/><br/><br/><br/>
                 <div className="form-group form-button">
                     <input type="submit" name="signin" id="signin" className="form-submit"
-                     value = "login" onClick={PostData}
+                     value = "Login" onClick={PostData}
                     />
+                </div>
+                <br/><br/>
+                </div>
                 </div>
                 </form>
              </div>
@@ -86,4 +110,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Login;
