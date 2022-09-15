@@ -1,10 +1,12 @@
 import React from "react";
+import Navbar from './Navbar';
 //import {  Link } from "react-router-dom";
 //import { NavLink } from "react-router-dom";
 const Others = () =>{   //this is general ledger component
    
     return (
         <div>
+          <Navbar />
         <br></br>
         
         <div class="row">

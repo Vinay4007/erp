@@ -1,9 +1,12 @@
 import React from "react";
+import Navbar from './Navbar';
 
 const Curp = () =>{   
    
     return (
-       <div className='compr'><br></br><br></br>
+       <div className='compr'>
+        <Navbar />
+        <br></br><br></br>
         
         <div class="row">
         <div class="col"></div>

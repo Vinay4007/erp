@@ -1,17 +1,19 @@
 import React from "react";
+import Navbar from './Navbar';
 
 const Applyforloan = () => {
     return(
         <section class="mb-7">
 
-   
+   <div>
+   <Navbar />
     <h2 class="h1-responsive font-weight-bold text-center ">Contact us</h2>
    
     
 
     <div class="row">
 
-      
+    
         <div class="col-md-9 mb-md-0 mb-5">
             <form id="contact-form" name="contact-form" action="mail.php" method="POST">
 
@@ -93,7 +95,7 @@ const Applyforloan = () => {
 
 
     </div>
-
+        </div>
 </section>
     )
 }
