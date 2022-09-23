@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from './Navbar';
+import Navbar2 from './Navbar2';
 
 const CulEx = () =>{   
    
     return (
        <div className='ce'>
-        <Navbar />
+        <Navbar2 />
         <p>Cultral Expenses</p>
         </div>
         

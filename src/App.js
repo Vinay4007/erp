@@ -1,3 +1,4 @@
+
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router,
@@ -6,10 +7,14 @@ import {BrowserRouter as Router,
 
 import img1 from './images/iittplogo.jfif';  //to invoke images we need to import from where we have putted.
 
+import Logins from "./Component/Logins";
+
 import Home from "./Component/Home";
 import Gl from "./Component/Gl";
 import Ha from "./Component/Ha";
 import Others from "./Component/Others";
+import Mess1 from "./Component/Mess1";
+import FEEDBACK from "./Component/Messfeedback";
 
 import Sp from "./Component/Sp";
 import Compr from "./Component/Compr";
@@ -18,10 +23,8 @@ import Curp from "./Component/Curp";
 import Eal from "./Component/Eal";
 import Lohis from "./Component/Lohis";
 import NewLo from "./Component/Newlo";
-import Adv from "./Component/Adv";
 
 import CulEx from "./Component/Culex";
-import Dpb from "./Component/Dpb";
 import Pk from "./Component/Pk";
 
 import PayCul from "./Component/paycul";
@@ -44,25 +47,62 @@ import Cultural from './Component/Cultural';
 import Request from './Component/Request';
 import Scholar from './Component/scholar';
 import SendReceipt from './Component/recscho';
-import budget1 from './Component/budget1';
 
+import Budgets from './Component/budget1';
+import Csb from './Component/csbud';
+import Eeb from './Component/eebud';
+import Meb from './Component/mebud';
+import Chb from './Component/chbud';
+import Ceb from './Component/cebud';
+
+
+
+import NewFund from './Component/fundrequest';
+
+import Signup1 from './Component/Facultysignup';
+import Login1 from './Component/Facultylogin';
+import Signup2 from './Component/Adminsignup';
+import Login2 from './Component/adminlogin';
+import Home1 from './Component/Home1';
+import Home2 from './Component/Home2';
 
 const App = () => {
   
   return( 
     <div className='print'>
-    
-
+      <div className="bckground">
+      
       <Router>
-        <Route>
-          <Image/>
+
+      
+
+    
+      <Route exact path = "/" component={Logins} />
+      <Route path = "/signup" component={Signup} />
+      <Route path = "/login" component={Login} />
+      <Route path = "/home" component={Home} />
+      
+
+    
+        <Route path = "/signup1" component={Signup1} />
+        <Route path = "/login1" component={Login1} />
+        <Route path = "/home1" component={Home1} />
+      
+
+    
+        <Route path = "/signup2" component = {Signup2} />
+        <Route path = "/login2" component = {Login2} />
+        <Route path = "/home2" component={Home2} />
+
+      
+
+      
           
-        
           
-          <Route exact path = "/" component={Signup} />
-          <Route path = "/login" component={Login} />
           
-          <Route  path = "/home" component={Home} />
+          
+          
+          {/* <Route path = "/home" component={Home} /> */}
           <Route path = "/transactions" component={Gl} />
           <Route path = "/ha" component={Ha} />
           <Route path = "/others" component={Others} />
@@ -74,10 +114,8 @@ const App = () => {
           <Route path = "/eal" component={Eal} />
           <Route path = "/lh" component={Lohis} />
           <Route path = "/newloan" component={NewLo} />
-          <Route path = "/adv" component={Adv} />
 
           <Route path = "/ce" component={CulEx} />
-          <Route path = "/dpb" component={budget1} />
           <Route path = "/pk" component={Pk} />
 
           <Route path = "/es" component={Es}/>
@@ -97,13 +135,29 @@ const App = () => {
           <Route path = "/paycul" component={PayCul}/>
           <Route path = "/scholar" component={Scholar}/>
           <Route path = "/sendreceipt" component={SendReceipt}/>
+
+          <Route path = "/dpb" component={Budgets}/>
+          <Route path = "/csbud" component={Csb}/>
+          <Route path = "/eebud" component={Eeb}/>
+          <Route path = "/mebud" component={Meb}/>
+          <Route path = "/chbud" component={Chb}/>
+          <Route path = "/cebud" component={Ceb}/>
+
+          
+          <Route path = "/mess1"  component={Mess1}/>
+          <Route path = "/feedback" component={FEEDBACK} />
+          <Route path = "/fund" component={NewFund}/>
+
+          
+          
           {/* <Route path = "" component={Errorpage}/> */}
           {/* <Route path="*">
             <Errorpage/>
           </Route> */}
-          </Route>
+          
           
       </Router>
+      </div>
     </div> 
      
  

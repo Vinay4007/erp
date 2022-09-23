@@ -1,19 +1,17 @@
 import React from "react";
-import Navbar1 from './Navbar1';
 
-const Applyforloan = () => {
-    return(
+const Contact = () =>{
+    return (
         <section class="mb-7">
 
-   <div>
-   <Navbar1 />
+   
     <h2 class="h1-responsive font-weight-bold text-center ">Contact us</h2>
    
     
 
     <div class="row">
 
-    
+      
         <div class="col-md-9 mb-md-0 mb-5">
             <form id="contact-form" name="contact-form" action="mail.php" method="POST">
 
@@ -34,7 +32,7 @@ const Applyforloan = () => {
                     <div class="col-md-6">
                         <div class="md-form mb-0">
                         <label for="email" class="">Your email</label>
-                            <input type="email" id="email" name="email" class="form-control"></input>
+                            <input type="text" id="email" name="email" class="form-control"></input>
                             
                         </div>
                     </div>
@@ -95,8 +93,8 @@ const Applyforloan = () => {
 
 
     </div>
-        </div>
+
 </section>
     )
 }
-export default Applyforloan
+export default Contact;
