@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import { SidebarData } from './SidebarData';
+import { SidebarData2 } from './SidebarData2';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
 
-function Navbar() {
+function Navbar2() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
@@ -26,7 +26,7 @@ function Navbar() {
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
-            {SidebarData.map((item, index) => {
+            {SidebarData2.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
                   <Link to={item.path}>
@@ -46,4 +46,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar2;

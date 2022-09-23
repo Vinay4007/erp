@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar2 from "./Navbar2";
 const Scholar = () =>{
     return (
         <div>
-            <Navbar/>
+            <Navbar2/>
             <h2 class="text-center"><b>Make Payment</b></h2>
             <div class="row">
                 <div class="col"></div>

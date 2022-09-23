@@ -1,9 +1,9 @@
 import React from 'react'
-import Navbar from "./Navbar";
+import Navbar2 from "./Navbar2";
 const Request = () => {
   return (
     <div>
-        <Navbar/>
+        <Navbar2/>
         <div className='req' class="text-center">
             
                 <h1 ><small>Sending request to Academic Section</small></h1>
@@ -26,7 +26,7 @@ const Request = () => {
             <textarea class="form-control" aria-label="With textarea"></textarea>
                 
             </div><br />
-            <div class="form-inline"><br />
+            {/* <div class="form-inline"><br />
                 <div class="col-sm-12">
                 <label for="formFileMultiple" class="form-label">Upload Receipt</label>
                    
@@ -35,7 +35,8 @@ const Request = () => {
   
                 </div><br />
                 
-            </div><br />
+            </div><br /> */}
+            <br/><br/><br/><br/><br/>
            
                      <button type="button" class="btn btn-success">Submit</button>
   
@@ -57,4 +58,4 @@ const Request = () => {
   )
 }
 
-export default Request
+export default Request;

@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from './Navbar';
+import Navbar1 from './Navbar1';
 //import {  Link } from "react-router-dom";
 
 const EmploAdv = () =>{   
    
     return (
        <div className='eal'>
-        <Navbar />
+        <Navbar1 />
         <br></br>
 
         <div class="row">
@@ -14,7 +14,7 @@ const EmploAdv = () =>{
         <div class="col">
           <br/>
         <div>
-          <a href="/newloan" class="btn btn-primary">Apply for New Loan  </a>
+          <a href="/newloan" class="btn btn-primary">Details of New Loan  </a>
         </div><br></br>
         <div>
           <a href="/lh" class="btn btn-primary"> Loan History  </a>

@@ -1,9 +1,9 @@
 import React from 'react'
-import Navbar from "./Navbar";
+import Navbar2 from "./Navbar2";
 const SendReceipt = () => {
   return (
     <div>
-        <Navbar/>
+        <Navbar2/>
         <div className='req' class="text-center">
             
                 <h1 ><small>Scholarship Receipt</small></h1>

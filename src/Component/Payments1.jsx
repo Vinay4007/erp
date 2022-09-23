@@ -1,5 +1,7 @@
+
 import React, {useState} from "react";
 import Navbar from './Navbar';
+
 // import { useHistory} from "react-router-dom";
 
 
@@ -49,30 +51,35 @@ const Payments1= () =>{
 
     return (
         
-       <div className='newlo1'>
+       <div className='pay1'>
 
         <Navbar />
-        
-        <section class="tutionfee">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+            <br/>
+            <div class="card bg-light border-dark" >
+            <section class="tutionfee">
 
+            <h4 class="h1-responsive font-weight-bold text-center mt-3">Semester Tution fees</h4>
    
-    <h2 class="h1-responsive font-weight-bold text-center ">Semester Tution fees</h2>
-   
-    <br/>
+            <br/>
             
-    <div class="row">
+            <div class="row">
 
       
-        <div class="col-md-9 mb-md-0 mb-5">
+        <div class="col-md-12">
             <form method="POST"  id="fee-form" name="fee-form" >
 
               
                 <div class="row">
 
-                    
+                <div class="col-md-4 text-end">
+                <label for="name" class="mt-1">Name</label>
+                </div>
                     <div class="col-md-6">
-                        <div class="md-form mb-0">
-                        <label for="name" class="">Your name</label>
+                        <div class="md-form">
+                        
                             <input type="text" name="name" id="name" class="form-control" autoComplete="off"
                                 value={tutfee.name}
                                 onChange={handleInputs}
@@ -80,13 +87,16 @@ const Payments1= () =>{
                             />
                             
                         </div>
+                    </div> 
+                    <div class="col-md-2"></div>
                     </div>
-            
-
-            
+                <br/>
+                <div class="row">
+                <div class="col-md-4 text-end">
+                <label for="email" class="mt-1">Email</label>
+                </div>
                     <div class="col-md-6">
                         <div class="md-form mb-0">
-                        <label for="email" class="">Your email</label>
                             <input type="text" name="email" id="email" class="form-control" autoComplete="off"
                                 value={tutfee.email}
                                 onChange={handleInputs}
@@ -95,17 +105,16 @@ const Payments1= () =>{
                             
                         </div>
                     </div>
-                    
+                    <div class="col-md-2"></div>
 
                 </div>
-               
                 <br/>
-               
                 <div class="row">
-
+                <div class="col-md-4 text-end">
+                <label for="branch" class="mt-1">Branch</label>
+                </div>
                     <div class="col-md-6">
                         <div class="md-form mb-0">
-                        <label for="branch" class="">Branch</label>
                             <input type="text" name="branch" id="branch" class="form-control" autoComplete="off"
                             value={tutfee.branch}
                             onChange={handleInputs}
@@ -114,11 +123,15 @@ const Payments1= () =>{
                             
                         </div>
                     </div>
-
-
-                    <div class="col-md-2">
+                <div class="col-md-2"></div>
+                </div>
+                <br/>
+                <div class="row">
+                <div class="col-md-4 text-end">
+                <label for="semester" class="mt-1">Semester</label>
+                </div>
+                    <div class="col-md-4">
                         <div class="md-form mb-0">
-                        <label for="semester" class="">Semester</label>
                             <input type="number" name="semester" id="semester" class="form-control" autoComplete="off"
                             value={tutfee.semester}
                             onChange={handleInputs}
@@ -127,82 +140,78 @@ const Payments1= () =>{
                             
                         </div>
                     </div>
+                    <div class="col-md-4"></div>
                 </div>
                 <br/>
                 <div class="row">
+                <div class="col-md-4 text-end">
+                    <label for="amount" class="mt-1">Amount</label>
+                </div>
                     <div class="col-md-4">
                         <div class="md-form mb-0">
-                        <label for="amount" class="">Enter Amount</label>
                             <input type="number" id="amount" name="amount" class="form-control" autoComplete="off"
                             value={tutfee.amount}
                             onChange={handleInputs}
-                            placeholder="Amount"
+                            placeholder="Enter Amount"
                             />
                             
                         </div>
                     </div>
+                    <div class="col-md-4"></div>
                 </div>
-                
                 <br/>
-                
                 <div class="row">
-
+                <div class="col-md-4 text-end">
+                    <label for="message" class="mt-1">Remarks </label>
+                </div>
                    
-                    <div class="col-md-12">
+                    <div class="col-md-7">
 
                         <div class="md-form">
-                        <label for="message">Any Remarks </label>
                             <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
                             
                         </div>
 
                     </div>
+                    <div class="col-md-1"></div>
                 </div>
-            
+                <br/>
 
             </form>
 
             <br/>
             
             <div className=" text-center form-group form-button">
-                    <input type="submit" name="tutionfee" id="tutionfee" className="form-submit"
-                     value = "Submit to pay" onClick={PostData}
+                    <input type="submit" name="tutionfee" id="tutionfee" className="form-submit btn btn-primary"
+                     value = "Pay" onClick={PostData}
                     />
                 </div>
-
-            
-            
+                <br/>
             
         </div>
-
-
-
-        <div class="col-md-3 text-center">
-            <ul class="list-unstyled mb-0">
-                <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                    <p>Academic Section </p>
-                </li>
-
-                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                    <p>academic@iittp.ac.in</p>
-                </li>
-            </ul>
-            <br/><br/><br/><br/><br/><br/>
-            <br/><br/><br/><br/><br/><br/><br/>
-            <div class="row">
-                <div class="text-right col-md-12 bg-light">
-                
-                <a href="/compr" class="btn btn-primary">Transactions history </a>
-                </div>
-            </div>
-            <br/>
-        </div>
-
 
     </div>
 
 </section>
+
+</div>
+<br/>
+</div>
+        <div class="col-sm-3 text-center">
+            <br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/>
+            <div class="row">
+                <div class="text-end col-md-9 ">
+                
+                <a href="/compr" class="btn btn-warning">Transactions history </a>
+                </div>
+            </div>
+            
         </div>
+        
+</div>
+</div>
         
       );
 };

@@ -1,15 +1,17 @@
 import React from "react";
-import Navbar from './Navbar';
+import Navbar2 from './Navbar2';
   
-const Home = () =>{  
+const Home2 = () =>{  
    
     return (
       
-       <div className='home'>
-        <Navbar />
+       <div className='home1'>
+        <Navbar2 />
         <div class="container text-center">
           <br/>
         <h1 class="text-center">Finance - Accounts</h1>
+        <br/>
+        <h1 class="text-center">Welcome to Admin Section</h1>
         <div class="row">
         <div class="col">
           
@@ -28,4 +30,4 @@ const Home = () =>{
       );
 };
 
-export default Home;
+export default Home2;
