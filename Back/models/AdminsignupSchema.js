@@ -1,7 +1,8 @@
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
-const loanSchema = new mongoose.Schema({
+const adminSchema = new mongoose.Schema({
     name:{
         type: String,
         required:true
@@ -14,19 +15,7 @@ const loanSchema = new mongoose.Schema({
         type: Number,
         required:true
     },
-    loannum:{
-        type: String,
-        required:true
-    },
-    bankname:{
-        type: String,
-        required:true
-    },
-    loanamount:{
-        type: String,
-        required:true
-    },
-    emileft:{
+    password:{
         type: String,
         required:true
     },
@@ -40,7 +29,21 @@ const loanSchema = new mongoose.Schema({
     ]
 })
 
-loanSchema.methods.generateAuthToken = async function(){
+
+
+//hashing the password
+
+adminSchema.pre('save', async function(next){
+    console.log("Hello Friends")
+    if(this.isModified('password')){
+       this.password = await bcrypt.hash(this.password, 12);
+    }
+    next();
+} );
+
+// generating token
+
+adminSchema.methods.generateAuthToken = async function(){
     try{
         let token = jwt.sign({_id:this._id}, process.env.SECRET_KEY);
         this.tokens = this.tokens.concat({token: token});
@@ -50,7 +53,6 @@ loanSchema.methods.generateAuthToken = async function(){
         console.log(err);
     }
 }
+const Admin = mongoose.model('ADMIN',adminSchema);
 
-const loandata = mongoose.model('LOAN',loanSchema);
-
-module.exports = loandata;
+module.exports = Admin;

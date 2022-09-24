@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 
-const loanSchema = new mongoose.Schema({
+const fundingrequestSchema = new mongoose.Schema({
     name:{
         type: String,
         required:true
@@ -14,20 +14,16 @@ const loanSchema = new mongoose.Schema({
         type: Number,
         required:true
     },
-    loannum:{
+    prevfunddetails:{
         type: String,
         required:true
     },
-    bankname:{
+    fundingamount:{
         type: String,
         required:true
     },
-    loanamount:{
-        type: String,
-        required:true
-    },
-    emileft:{
-        type: String,
+    message:{
+        type:String,
         required:true
     },
     tokens:[
@@ -40,7 +36,7 @@ const loanSchema = new mongoose.Schema({
     ]
 })
 
-loanSchema.methods.generateAuthToken = async function(){
+fundingrequestSchema.methods.generateAuthToken = async function(){
     try{
         let token = jwt.sign({_id:this._id}, process.env.SECRET_KEY);
         this.tokens = this.tokens.concat({token: token});
@@ -51,6 +47,6 @@ loanSchema.methods.generateAuthToken = async function(){
     }
 }
 
-const loandata = mongoose.model('LOAN',loanSchema);
+const funddata = mongoose.model('FUND',fundingrequestSchema);
 
-module.exports = loandata;
+module.exports = funddata;

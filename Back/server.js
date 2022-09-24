@@ -5,6 +5,9 @@ const mongoose = require('mongoose')
 const app = express()
 dotenv.config({path:'./.env'});
 require('./db/connec');
+require('./db/connec1');
+const cors=require("cors");
+
 
 const User = require('./models/userSchema')
 const loandata = require('./models/loanSchema');
@@ -12,11 +15,23 @@ const feedt = require('./models/feeSchema');
 const hosfeedt = require('./models/hosfeeSchema');
 const tutionfeedt = require('./models/tutionSchema');
 const advdata = require('./models/advSchema');
+const funddata = require('./models/fundingrequestSchema');
+const facultysignupSchema = require('./models/FacsignupSchema');
+const adminSchema = require('./models/AdminsignupSchema');
+const feeddata = require('./models/FeedbackSchema');
+
 //const tutionRoutes = require('./routes/tution')
 // let alert = require('alert');
 // middleware
 
+
 app.use(express.json());
+
+//for mess pdf
+app.use(cors())
+app.get("/",(req,res) => {
+  res.download("./messfee.pdf");
+})
 
 app.use(require('./routes/auth'));
 app.use(require('./routes/loandb'));
@@ -24,6 +39,11 @@ app.use(require('./routes/feedb'));
 app.use(require('./routes/hosfeedb'));
 app.use(require('./routes/tutionfeedb'));
 app.use(require('./routes/advdb'));
+app.use(require('./routes/fundrequestdb'));
+app.use(require('./routes/auth1'));
+app.use(require('./routes/auth2'));
+app.use(require('./routes/feedbackdb'));
+
 const PORT = process.env.PORT;
 
 const middleware = (req,res,next) =>{
@@ -98,6 +118,10 @@ app.get('/tutfeestatus',(req,res) => {
 app.get('/adv',(req,res) => {
   res.send('Enter Advance Details')
 })
+app.get('/fund',(req,res) => {
+  res.send('Enter Funding Details')
+})
+
 
 
 //app.use('/api/tution',tutionRoutes)
@@ -106,6 +130,7 @@ app.get('/adv',(req,res) => {
 // })
 
 // connecting to db
+
 
 
 app.listen(process.env.PORT,()=>{

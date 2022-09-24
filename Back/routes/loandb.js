@@ -12,15 +12,15 @@ router.get('/',(req,res) => {
 
 router.post('/newloan', async (req,res)=>{
 
-    const { name, email, phone, loanreq } = req.body
+    const { name, email, phone, loannum,bankname,loanamount,emileft } = req.body
 
-    if( !name || !email || !phone || !loanreq ){
+    if( !name || !email || !phone || !loannum || !bankname || !loanamount || !emileft ){
         return res.status(422).json({error: " fill all fields "})
     }
 
 
     else {
-            const loan = new loandata({ name, email, phone, loanreq});
+            const loan = new loandata({ name, email, phone, loannum,bankname,loanamount,emileft});
             
             await loan.save();
             res.status(201).json({message:"Request Sent"})
