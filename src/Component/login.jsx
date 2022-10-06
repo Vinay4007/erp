@@ -54,11 +54,11 @@ const Login = () => {
         <br />
         <br />
         <div class="row">
-          <div class="col"></div>
-          <div class="col-sm-3">
-            <div class="card text-center bg-light border-dark">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div class="card bg-light border-dark">
               <div class="card-body">
-                <h5 class="card-title">Student Sign-in</h5>
+                <h4 class="card-title text-center">Student Sign-in</h4>
                 <br />
                 <form
                   method="POST"
@@ -68,7 +68,7 @@ const Login = () => {
                   <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-10 mb-3">
-                      <label for="email" class="">
+                      <label for="email" class="text-left">
                         Enter Email
                       </label>
                       <div class="input-group">
@@ -100,7 +100,7 @@ const Login = () => {
                   <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-10 mb-3">
-                      <label for="Password" class="">
+                      <label for="Password" class="text-left">
                         Enter Password
                       </label>
                       <div class="input-group">
@@ -128,9 +128,8 @@ const Login = () => {
                   </div>
 
                   <br />
-                  <br />
 
-                  <div className="form-group form-button">
+                  <div className="form-group form-button text-center">
                     <input
                       type="submit"
                       name="signin"
@@ -145,36 +144,7 @@ const Login = () => {
               </div>
             </div>
           </div>
-          <div class="col"></div>
-        </div>
-
-        <div class="col">
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <h6>
-            IF ALREADY REGISTERED{" "}
-            <a class="btn btn-primary" href="/signup" role="button">
-              SignUp Here
-            </a>
-          </h6>
-          <br />
+          <div class="col-md-4"></div>
         </div>
       </div>
     </>

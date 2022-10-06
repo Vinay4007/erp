@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 //import React from 'react';
+import Navbar2 from "./Navbar2";
 
 const Signup = () => {
   const history = useHistory();
@@ -50,21 +51,23 @@ const Signup = () => {
       window.alert("REGISTRATION SUCCESS");
       console.log("Successfull REGISTRATION");
 
-      history.push("/login");
+      history.push("/home2");
     }
   };
 
   return (
     <>
-      <section className="signup">
-        <div class="row">
-          <div class="col"></div>
-          <div class="col">
-            <div classname="container mt-5">
-              <div classname="signup-content">
+      <Navbar2 />
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <br />
+          <div class="card bg-light border-dark">
+            <section className="signup">
+              <div classname="container mt-5">
                 <div classname="signup-form">
                   <br />
-                  <h2 className="form-title text-center">Sign up</h2>
+                  <h3 className="form-title text-center">Add Student</h3>
                   <br />
                   <form
                     method="POST"
@@ -72,11 +75,14 @@ const Signup = () => {
                     id="register-form"
                   >
                     <div class="row">
-                      <div class="col-md-9">
+                      <div class="col-md-4 text-end">
+                        <label for="name" class="mt-1">
+                          Student Name
+                        </label>
+                      </div>
+
+                      <div class="col-md-6">
                         <div class="md-form mb-0">
-                          <label for="name" class="">
-                            Name
-                          </label>
                           <input
                             type="text"
                             name="name"
@@ -85,38 +91,47 @@ const Signup = () => {
                             autoComplete="off"
                             value={user.name}
                             onChange={handleInputs}
-                            placeholder="Your Name"
+                            placeholder="Name"
                           />
                         </div>
                       </div>
+                      <div class="col-md-3"></div>
                     </div>
+
                     <br />
+
                     <div class="row">
-                      <div class="col-md-9">
+                      <div class="col-md-4 text-end">
+                        <label for="email" class="mt-1">
+                          Student Email
+                        </label>
+                      </div>
+                      <div class="col-md-5">
                         <div class="md-form mb-0">
-                          <label for="email" class="">
-                            Email
-                          </label>
                           <input
                             type="text"
-                            name="email"
                             id="email"
+                            name="email"
                             class="form-control"
-                            autoComplete="off"
                             value={user.email}
                             onChange={handleInputs}
-                            placeholder="Your Email"
+                            placeholder="Email"
                           />
                         </div>
                       </div>
+                      <div class="col-md-3"></div>
                     </div>
+
                     <br />
+
                     <div class="row">
-                      <div class="col-md-9">
+                      <div class="col-md-4 text-end">
+                        <label for="phone" class="mt-1">
+                          Phone Number
+                        </label>
+                      </div>
+                      <div class="col-md-4">
                         <div class="md-form mb-0">
-                          <label for="phone" class="">
-                            Phone Number
-                          </label>
                           <input
                             type="number"
                             name="phone"
@@ -125,18 +140,23 @@ const Signup = () => {
                             autoComplete="off"
                             value={user.phone}
                             onChange={handleInputs}
-                            placeholder="Phone Number"
+                            placeholder="Number"
                           />
                         </div>
                       </div>
+                      <div class="col-md-4"></div>
                     </div>
+
                     <br />
+
                     <div class="row">
-                      <div class="col-md-9">
+                      <div class="col-md-4 text-end">
+                        <label for="password" class="mt-1">
+                          Password
+                        </label>
+                      </div>
+                      <div class="col-md-3">
                         <div class="md-form mb-0">
-                          <label for="password" class="">
-                            Password
-                          </label>
                           <input
                             type="text"
                             name="password"
@@ -149,56 +169,30 @@ const Signup = () => {
                           />
                         </div>
                       </div>
+                      <div class="col-md-5"></div>
                     </div>
                     <br />
-
+                    <br />
                     <div className="form-group form-button text-center">
                       <input
                         type="submit"
                         name="signup"
                         id="signup"
                         className="form-submit btn btn-warning"
-                        value="Register"
+                        value="Create"
                         onClick={PostData}
                       />
                     </div>
                   </form>
                 </div>
                 <br />
-                <br />
               </div>
-            </div>
+            </section>
           </div>
-          <div class="col">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <h6>
-              IF ALREADY REGISTERED{" "}
-              <a class="btn btn-primary" href="/login" role="button">
-                Login Here
-              </a>
-            </h6>
-            <br />
-          </div>
+          <br />
         </div>
-      </section>
+        <div class="col-md-3 text-center"></div>
+      </div>
     </>
   );
 };

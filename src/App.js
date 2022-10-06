@@ -2,8 +2,6 @@ import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import img1 from "./images/iittplogo.jfif"; //to invoke images we need to import from where we have putted.
-
 import Logins from "./Component/Logins";
 
 import Home from "./Component/Home";
@@ -58,6 +56,7 @@ import Ceb from "./Component/cebud";
 import Studentadmin from "./Component/AdminStudent";
 import Filling1 from "./Component/Adminsidestututfee";
 import Filling2 from "./Component/Adminsidestuhosfee";
+import Facultyadmin from "./Component/FacultyAdmin";
 
 import NewFund from "./Component/fundrequest";
 
@@ -152,21 +151,14 @@ const App = () => {
           <Route path="/stuadm1" component={Filling1} />
           <Route path="/stuadm2" component={Filling2} />
 
+          <Route path="/facul" component={Facultyadmin} />
+          {/* <Route path="/facadm1" component={Facultyadmin} />
+          <Route path="/facadm2" component={Facultyadmin} /> */}
+
           <Route path="/tds" component={TDSDETAILS} />
           <Route path="/mailtds" component={SendTDS} />
           <Route path="/bsg" component={BalanceSheetGen} />
         </Router>
-      </div>
-    </div>
-  );
-};
-
-const Image = () => {
-  return (
-    <div className="main">
-      <img src={img1} width="150px" alt="" />
-      <div className="form-check form-check-inline">
-        <h1 className="title">Indian Institute Of Technology Tirupati</h1>
       </div>
     </div>
   );
