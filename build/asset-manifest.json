@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.bbdcb22a.css",
-    "main.js": "/static/js/main.a04de569.js",
+    "main.css": "/static/css/main.3d1660cd.css",
+    "main.js": "/static/js/main.86f381b9.js",
     "static/media/iittplogo.jfif": "/static/media/iittplogo.40e991ac830f2e6bb9ad.jfif",
     "index.html": "/index.html",
-    "main.bbdcb22a.css.map": "/static/css/main.bbdcb22a.css.map",
-    "main.a04de569.js.map": "/static/js/main.a04de569.js.map"
+    "main.3d1660cd.css.map": "/static/css/main.3d1660cd.css.map",
+    "main.86f381b9.js.map": "/static/js/main.86f381b9.js.map"
   },
   "entrypoints": [
-    "static/css/main.bbdcb22a.css",
-    "static/js/main.a04de569.js"
+    "static/css/main.3d1660cd.css",
+    "static/js/main.86f381b9.js"
   ]
 }
