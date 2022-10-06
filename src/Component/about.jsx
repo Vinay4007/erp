@@ -118,39 +118,3 @@ const About = () => {
 };
 
 export default About;
-
-// handleSubmit(){
-//     let databody = {
-//         "name": this.state.nameIn,
-//         "quote": this.state.quoteIn
-//     }
-
-//     return fetch('/about', {
-//         method: 'POST',
-//         body: JSON.stringify(databody),
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//     })
-//     .then(res => res.json())
-//     .then(data => console.log(data));
-// }
-
-// render(){
-//     return (
-//         <div>
-//             <form onSubmit={this.handleSubmit}>
-//                 <label>
-//                     Name
-//                     <input type="text" name="name" value={this.name} onChange={this.handleNameChange}/>
-//                 </label>
-//                 <label>
-//                     Email
-//                     <input type="text" name="quote" value={this.email} onChange={this.handleQuoteChange}/>
-//                 </label>
-
-//                 <input type="submit" value="Add to DB" />
-//             </form>
-//         </div>
-//     );
-// }

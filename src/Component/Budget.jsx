@@ -11,13 +11,15 @@ const Budget = () => {
           <br></br>
           <br />
           <br />
-          <a href="/dpb" class="btn btn-info btn-sm">
+          <br />
+          <a href="/dpb" class="btn btn-info btn-lg">
             Department Budget tracking
           </a>
           <br></br>
           <br></br>
           <br />
-          <a href="/budget" class="btn btn-info btn-sm">
+          <br />
+          <a href="/budget" class="btn btn-info btn-lg">
             Department Impreset
           </a>
           <br></br>

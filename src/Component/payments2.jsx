@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
+//import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 const Payments2 = () => {
@@ -11,6 +12,21 @@ const Payments2 = () => {
     semester: "",
     amount: "",
   });
+
+  // const getDetails = async () => {
+  //   try {
+  //     let data = await axios.get("http://localhost:8080/AhosfeeDetails");
+  //     console.log(data.data.data);
+  //     let detail = data.data.data;
+  //     setfee({
+  //       name: detail.name,
+  //       email: detail.email,
+  //       branch: detail.branch,
+  //       semester: "1",
+  //       amount: detail.amount,
+  //     });
+  //   } catch (err) {}
+  // };
 
   let name, value;
 
@@ -51,6 +67,9 @@ const Payments2 = () => {
     }
   };
 
+  // useEffect(() => {
+  //   getDetails();
+  // }, []);
   return (
     <div className="pay2">
       <Navbar />
