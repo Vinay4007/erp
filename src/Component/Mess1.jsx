@@ -22,12 +22,18 @@ function Mess1() {
     <div>
       <Navbar />
       <br></br>
+      <br></br>
+      <br></br>
 
       <div class="row">
         <div class="col"></div>
         <div class="col">
           <div>
-            <a href="" onClick={(e) => download(e)} class="btn btn-info btn-sm">
+            <a
+              href=""
+              onClick={(e) => download(e)}
+              class="btn btn-success btn-lg"
+            >
               Mess fees Structure
             </a>
             <br></br>
@@ -35,7 +41,7 @@ function Mess1() {
           </div>
           <br></br>
           <div>
-            <a href="/pay2 " class="btn btn-info btn-sm">
+            <a href="/pay2 " class="btn btn-info btn-lg">
               Mess Fee Payment
             </a>
           </div>
@@ -43,7 +49,7 @@ function Mess1() {
           <br></br>
 
           <div>
-            <a href="/feedback " class="btn btn-info btn-sm">
+            <a href="/feedback " class="btn btn-info btn-lg">
               Mess FEEDBACK
             </a>
           </div>

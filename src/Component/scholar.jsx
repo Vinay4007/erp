@@ -5,18 +5,27 @@ const Scholar = () => {
   return (
     <div>
       <Navbar2 />
-      <h2 class="text-center">
-        <b>Make Payment</b>
-      </h2>
+      <br />
+
       <div class="row">
         <div class="col"></div>
-        <div class="col">
+        <div class="col ">
+          <h2 class="text">
+            <b>Make Payment</b>
+          </h2>
+        </div>
+        <div class="col"></div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col"></div>
+        <div class="col ">
           <div class="input-group mb-0">
             <br />
 
             <div class="padding">
               <div class="row">
-                <div class="col-sm-18">
+                <div class="col">
                   <div class="card">
                     <div class="card-header">
                       <strong>Enter Students Account details</strong>
@@ -24,7 +33,7 @@ const Scholar = () => {
                     </div>
                     <div class="card-body">
                       <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-md-12">
                           <div class="form-group">
                             <label for="name">Name</label>
                             <input
@@ -38,7 +47,7 @@ const Scholar = () => {
                       </div>
 
                       <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-md-12">
                           <div class="form-group">
                             <br></br>
                             <label for="ccnumber">Account Number</label>
@@ -59,7 +68,7 @@ const Scholar = () => {
                       <br></br>
 
                       <div class="row">
-                        <div class="form-group col-sm-6">
+                        <div class="form-group col-md-6">
                           <label for="ccmonth">Email id</label>
                           <input
                             class="form-control"
@@ -94,30 +103,22 @@ const Scholar = () => {
               </div>
             </div>
           </div>
+          <br />
+          <br />
+          <div class="row">
+            <div class="col"></div>
+            <div class="col">
+              <a href="/sendreceipt" class="btn btn-success btn-md">
+                Receipt
+              </a>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
         </div>
-        <div class="col">
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <a href="/sendreceipt" class="btn btn-success btn-sm ">
-            Receipt
-          </a>
-          <br />
-          <br />
-        </div>
+        <div class="col"></div>
       </div>
     </div>
   );
