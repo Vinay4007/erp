@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-// import { useHistory} from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import Navbar from "./Navbar";
 
-const CHECKSTAT = () => {
-  //    const history = useHistory()
-  const [fee, setfee] = useState({
+const CHECKSTAT1 = () => {
+  const history = useHistory();
+  const [hostfee, sethostfee] = useState({
     name: "",
     branch: "",
     semester: "",
@@ -15,15 +15,15 @@ const CHECKSTAT = () => {
     console.log(e);
     name = e.target.name;
     value = e.target.value;
-    setfee({ ...fee, [name]: value });
+    sethostfee({ ...hostfee, [name]: value });
   };
 
   const PostData = async (e) => {
     e.preventDefault();
 
-    const { name, branch, semester } = fee;
+    const { name, branch, semester } = hostfee;
 
-    const res = await fetch("/hamfeestatus", {
+    const res = await fetch("/hosfeestatus", {
       method: "POST",
       headers: {
         "Content-Type": "applications/json",
@@ -43,18 +43,18 @@ const CHECKSTAT = () => {
     } else {
       window.alert("FEE PAID");
       console.log("Successful Login");
-      //history.push("/home")
+      history.push("/home");
     }
   };
   return (
-    <div className="compr">
+    <div className="chs1">
       <Navbar />
       <br></br>
 
       <div class="row">
         <div class="col"></div>
         <div class="col">
-          <h3>Check your hostel and mess fee status</h3> <br></br>
+          <h3>Check your hostel fee status</h3> <br></br>
           <form method="POST" className="sem-form" id="sem-form">
             <div class="row">
               <div class="col-md-10">
@@ -69,7 +69,7 @@ const CHECKSTAT = () => {
                     id="name"
                     class="form-control"
                     autoComplete="on"
-                    value={fee.name}
+                    value={hostfee.name}
                     onChange={handleInputs}
                     placeholder="Full Name"
                   />
@@ -90,7 +90,7 @@ const CHECKSTAT = () => {
                     id="branch"
                     class="form-control"
                     autoComplete="off"
-                    value={fee.branch}
+                    value={hostfee.branch}
                     onChange={handleInputs}
                     placeholder="Branch"
                   />
@@ -112,7 +112,7 @@ const CHECKSTAT = () => {
                     id="semester"
                     class="form-control"
                     autoComplete="off"
-                    value={fee.semester}
+                    value={hostfee.semester}
                     onChange={handleInputs}
                     placeholder="Sem"
                   />
@@ -146,4 +146,4 @@ const CHECKSTAT = () => {
   );
 };
 
-export default CHECKSTAT;
+export default CHECKSTAT1;

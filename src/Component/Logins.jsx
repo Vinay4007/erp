@@ -14,31 +14,44 @@ import React from "react";
 	.btn-login:hover{background:#003f87;text-decoration:none; color:#fff}*/
 
 const Logins = () => {
-    return(
-        
-        <div>
-            <br/><br/><br/><br/>
-        <div class="row">
-            <div class="col"></div>
-            <div class="col-sm-2">
-                <div class="card text-center bg-light border-dark" >
-  
-                    <div class="card-body">
-                        <h5 class="card-title">Welcome</h5>
-                        <br/>
-                        <a href="/login" class="btn btn-primary">Student Login</a>
-                        <br/><br/>
-                        <a href="/login1" class="btn btn-primary">Faculty Login </a>
-                        <br/><br/>
-                        <a href="/login2" class="btn btn-primary">Admin Login</a>
-                    </div>
-                </div>
-            </div>
-        <div class="col"></div>
-        </div>
-        </div>
+  return (
+    <div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm-2">
+          <div class="card text-center bg-light border-dark">
+            <div class="card-body">
+              <h5 class="card-title">Welcome</h5>
+              <br />
+              <a href="/login" class="btn btn-primary">
+                Student Login
+              </a>
+              <br />
+              <br />
+              <a href="/login1" class="btn btn-primary">
+                Faculty Login{" "}
+              </a>
+              <br />
+              <br />
+              <a href="/login2" class="btn btn-primary">
+                Admin Login
+              </a>
 
-    );
+              <br />
+              <br />
+              {/* <div class="col"><a href="/about" class="pull-left">User Details</a>
+        </div> */}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm"></div>
+      </div>
+    </div>
+  );
 };
 
-export default Logins
+export default Logins;

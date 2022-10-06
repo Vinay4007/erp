@@ -31,7 +31,7 @@ function SponProj() {   //this is general ledger component
         
         
         <div>
-        <a href="/pay2" class="btn btn-primary">Hostel fees </a>
+        <a href="/pay3" class="btn btn-primary">Hostel fees </a>
         <br/><br/><br/>
         </div>
         <div>

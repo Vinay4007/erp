@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import Navbar1 from "./Navbar1";
-// import { useHistory} from 'react-router-dom';
+import Navbar from "./Navbar";
+import { useHistory } from "react-router-dom";
 
-const NewLo = () => {
-  //    const history = useHistory();
-  const [loan, setLoan] = useState({
+const Payments3 = () => {
+  const history = useHistory();
+  const [hostfee, sethostfee] = useState({
     name: "",
     email: "",
-    phone: "",
-    loannum: "",
-    bankname: "",
-    loanbankname: "",
-    emileft: "",
+    branch: "",
+    semester: "",
+    amount: "",
   });
 
   let name, value;
@@ -21,16 +19,15 @@ const NewLo = () => {
     name = e.target.name;
     value = e.target.value;
 
-    setLoan({ ...loan, [name]: value });
+    sethostfee({ ...hostfee, [name]: value });
   };
 
   const PostData = async (e) => {
     e.preventDefault();
 
-    const { name, email, phone, loannum, bankname, loanbankname, emileft } =
-      loan;
+    const { name, email, branch, semester, amount } = hostfee;
 
-    const res = await fetch("/newloan", {
+    const res = await fetch("/hostelfee", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,44 +35,43 @@ const NewLo = () => {
       body: JSON.stringify({
         name,
         email,
-        phone,
-        loannum,
-        bankname,
-        loanbankname,
-        emileft,
+        branch,
+        semester,
+        amount,
       }),
     });
 
     const data = await res.json();
 
     if (res.status === 422 || !data) {
-      window.alert("fill all the fields");
-      //console.log("INVALID REGISTRATION");
+      window.alert("Invalid Entries");
     } else {
-      window.alert("Request Sent Successfully");
-      //console.log("Successfull REGISTRATION");
-
-      //history.push("/login")
+      window.alert("Scan QR to Pay");
+      history.push("/qrm");
     }
   };
 
   return (
-    <div className="pay1">
-      <Navbar1 />
+    <div className="pay2">
+      <Navbar />
       <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
           <br />
           <div class="card bg-light border-dark">
-            <section class="loandata">
+            <section class="hmfee">
               <h4 class="h1-responsive font-weight-bold text-center mt-3">
-                Loan Details
+                Hostel fees
               </h4>
               <br />
 
               <div class="row">
                 <div class="col-md-12 ">
-                  <form method="POST" classname="loan-form" id="loan-form">
+                  <form
+                    method="POST"
+                    classname="hostfee-form"
+                    id="hostfee-form"
+                  >
                     <div class="row">
                       <div class="col-md-4 text-end">
                         <label for="name" class="mt-1">
@@ -90,7 +86,7 @@ const NewLo = () => {
                             id="name"
                             class="form-control"
                             autoComplete="off"
-                            value={loan.name}
+                            value={hostfee.name}
                             onChange={handleInputs}
                             placeholder="Your Name"
                           />
@@ -114,7 +110,7 @@ const NewLo = () => {
                             id="email"
                             class="form-control"
                             autoComplete="off"
-                            value={loan.email}
+                            value={hostfee.email}
                             onChange={handleInputs}
                             placeholder="Your email"
                           />
@@ -126,21 +122,45 @@ const NewLo = () => {
 
                     <div class="row">
                       <div class="col-md-4 text-end">
-                        <label for="phone" class="mt-1">
-                          Phone Number
+                        <label for="branch" class="mt-1">
+                          Branch
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="md-form mb-0">
+                          <input
+                            type="text"
+                            name="branch"
+                            id="branch"
+                            class="form-control"
+                            autoComplete="off"
+                            value={hostfee.branch}
+                            onChange={handleInputs}
+                            placeholder="Your branch"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-2 text-end"></div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                      <div class="col-md-4 text-end">
+                        <label for="semester" class="mt-1">
+                          Semester
                         </label>
                       </div>
                       <div class="col-md-4">
                         <div class="md-form mb-0">
                           <input
-                            type="text"
-                            name="phone"
-                            id="phone"
+                            type="number"
+                            name="semester"
+                            id="semester"
                             class="form-control"
                             autoComplete="off"
-                            value={loan.phone}
+                            value={hostfee.semester}
                             onChange={handleInputs}
-                            placeholder="Your Number"
+                            placeholder="Semester"
                           />
                         </div>
                       </div>
@@ -150,99 +170,48 @@ const NewLo = () => {
 
                     <div class="row">
                       <div class="col-md-4 text-end">
-                        <label for="bankname" class="mt-1">
-                          Bank Name
+                        <label for="amount" class="mt-1">
+                          Amount
                         </label>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <div class="md-form mb-0">
                           <input
                             type="number"
-                            id="bankname"
-                            name="bankname"
+                            id="amount"
+                            name="amount"
                             class="form-control"
                             autoComplete="off"
-                            value={loan.bankname}
+                            value={hostfee.amount}
                             onChange={handleInputs}
-                            placeholder="Enter Bank Name"
+                            placeholder="Enter Amount"
                           />
                         </div>
                       </div>
-                      <div class="col-md-2 text-end"></div>
+                      <div class="col-md-4 text-end"></div>
                     </div>
                     <br />
 
                     <div class="row">
                       <div class="col-md-4 text-end">
-                        <label for="loannum" class="mt-1">
-                          Loan Number
-                        </label>
-                      </div>
-                      <div class="col-md-5">
-                        <div class="md-form mb-0">
-                          <input
-                            type="number"
-                            name="loannum"
-                            id="loannum"
-                            class="form-control"
-                            autoComplete="off"
-                            value={loan.loannum}
-                            onChange={handleInputs}
-                            placeholder="Loan Number"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-md-3 text-end"></div>
-                    </div>
-                    <br />
-
-                    <div class="row">
-                      <div class="col-md-4 text-end">
-                        <label for="loanamount" class="mt-1">
-                          Loan Amount{" "}
+                        <label for="message" class="mt-1">
+                          Feedback{" "}
                         </label>
                       </div>
 
                       <div class="col-md-6">
                         <div class="md-form">
-                          <input
+                          <textarea
                             type="text"
-                            id="loanamount"
-                            name="loanamount"
-                            class="form-control"
-                            value={loan.loanamount}
-                            onChange={handleInputs}
-                            placeholder="Loan Amount"
-                          />
+                            id="message"
+                            name="message"
+                            rows="2"
+                            class="form-control md-textarea"
+                          ></textarea>
                         </div>
                       </div>
                       <div class="col-md-2 text-end"></div>
                     </div>
-                    <br />
-
-                    <div class="row">
-                      <div class="col-md-4 text-end">
-                        <label for="emileft" class="mt-1">
-                          EMI's Left
-                        </label>
-                      </div>
-                      <div class="col-md-5">
-                        <div class="md-form mb-0">
-                          <input
-                            type="text"
-                            id="emileft"
-                            name="emileft"
-                            class="form-control"
-                            autoComplete="off"
-                            value={loan.emileft}
-                            onChange={handleInputs}
-                            placeholder="number of emi's left"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-md-3 text-end"></div>
-                    </div>
-                    <br />
                   </form>
 
                   <br />
@@ -250,10 +219,10 @@ const NewLo = () => {
                   <div className=" text-center form-group form-button">
                     <input
                       type="submit"
-                      name="loandata"
-                      id="loandata"
+                      name="tutionfee"
+                      id="tutionfee"
                       className="form-submit btn btn-primary"
-                      value="Submit"
+                      value="Submit to Pay"
                       onClick={PostData}
                     />
                   </div>
@@ -265,10 +234,41 @@ const NewLo = () => {
           <br />
         </div>
 
-        <div class="col-sm-3 text-center"></div>
+        <div class="col-sm-3 text-center">
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <div class="row">
+            <div class="col-md-9 text-end">
+              <a href="/chs1" class="btn btn-warning">
+                Transactions history{" "}
+              </a>
+              <br />
+            </div>
+          </div>
+          <br />
+        </div>
       </div>
     </div>
   );
 };
 
-export default NewLo;
+export default Payments3;
