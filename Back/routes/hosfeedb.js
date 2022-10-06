@@ -21,7 +21,7 @@ router.post('/hostelfee', async (req,res)=>{
 
         
             else {
-                const hostfee = new feedt({ name, email, branch, semester, amount});
+                const hostfee = new hosfeedt({ name, email, branch, semester, amount});
             
                 
      

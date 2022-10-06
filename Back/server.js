@@ -8,7 +8,10 @@ require('./db/connec');
 require('./db/connec1');
 const cors=require("cors");
 
+const cookieParser = require('cookie-parser');
+app.use(cookieParser()) ;
 
+// const Authenticate = require("../middleware/authenticate")
 const User = require('./models/userSchema')
 const loandata = require('./models/loanSchema');
 const feedt = require('./models/feeSchema');
@@ -19,6 +22,8 @@ const funddata = require('./models/fundingrequestSchema');
 const facultysignupSchema = require('./models/FacsignupSchema');
 const adminSchema = require('./models/AdminsignupSchema');
 const feeddata = require('./models/FeedbackSchema');
+const ADMTUTIONFEE = require('./models/AdminstututfeeSchema');
+const ADMHOSTELFEE = require('./models/AdminstuhosfeeSchema');
 
 //const tutionRoutes = require('./routes/tution')
 // let alert = require('alert');
@@ -43,13 +48,15 @@ app.use(require('./routes/fundrequestdb'));
 app.use(require('./routes/auth1'));
 app.use(require('./routes/auth2'));
 app.use(require('./routes/feedbackdb'));
+app.use(require('./routes/Adminstututdb'));
+app.use(require('./routes/Adminstuhosdb'));
 
 const PORT = process.env.PORT;
 
-const middleware = (req,res,next) =>{
-console.log('Hello my middleware');
-next();
-}
+// const middleware = (req,res,next) =>{
+// console.log('Hello my middleware');
+// next();
+// }
 //middleware();
 
 
@@ -70,13 +77,20 @@ app.use(express.json())
 app.get('/',(req,res) => {
     res.send('Hello from server')
 });
+//app.use(cors())
+// app.get('/tutfeestatus',(req,res) => {
+//   res.send('check the status')
+// });
+
 
 app.get('/contact',(req,res) => {
   res.send('contact from server')
 });
 
-app.get('/about',middleware,(req,res) => {
-  res.send('About from server')
+
+
+app.get('/tutfeestatus',(req,res) => {
+  res.send('check the status')
 });
 
 app.get('/signin',(req,res) => {
@@ -107,12 +121,21 @@ app.get('/hamfeestatus',(req,res) => {
   res.send('check the status')
 });
 
+app.get('/hosfeestatus',(req,res) => {
+  res.send('check the status')
+});
+
 app.get('/tutionfee',(req,res) => {
   res.send('Enter hostelfee details')
 });
 
-app.get('/tutfeestatus',(req,res) => {
-  res.send('check the status')
+app.get('/admtutionfee',(req,res) => {
+  res.send('Entering tutionfee details')
+});
+
+
+app.get('/admhostelfee',(req,res) => {
+  res.send('Entering hostelfee details')
 });
 
 app.get('/adv',(req,res) => {
