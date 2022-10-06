@@ -2,7 +2,7 @@ import React from "react";
 import Navbar2 from "./Navbar2";
 import { Link } from "react-router-dom";
 
-const Studentadmin = () => {
+const Facultyadmin = () => {
   return (
     <div className="stuadmin">
       <Navbar2 />
@@ -13,23 +13,23 @@ const Studentadmin = () => {
         <div class="col"></div>
         <div class="col">
           <div>
-            <Link to="/stuadm1" class="btn btn-primary btn-lg">
-              Tution Fees{" "}
+            <Link to="/facadm1" class="btn btn-primary btn-lg">
+              A{" "}
             </Link>
           </div>
           <br />
           <br />
 
           <div>
-            <Link to="/stuadm2" class="btn btn-primary btn-lg">
-              Hostel fees{" "}
+            <Link to="/facadm2" class="btn btn-primary btn-lg">
+              B{" "}
             </Link>
             <br />
             <br />
             <br />
           </div>
           <div>
-            <a class="btn btn-success btn-lg" href="/signup" role="button">
+            <a class="btn btn-primary btn-lg" href="/signup1" role="button">
               Create User
             </a>
           </div>
@@ -43,4 +43,4 @@ const Studentadmin = () => {
   );
 };
 
-export default Studentadmin;
+export default Facultyadmin;
