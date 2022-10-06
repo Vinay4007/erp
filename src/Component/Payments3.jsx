@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
+import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 const Payments3 = () => {
@@ -12,6 +13,21 @@ const Payments3 = () => {
     amount: "",
   });
 
+  const getDetails = async () => {
+    try {
+      let data = await axios.get("http://localhost:8080/AhosfeeDetails");
+      console.log(data.data.data);
+      let detail = data.data.data;
+      //settut({name:data})
+      sethostfee({
+        name: detail.name,
+        email: detail.email,
+        branch: detail.branch,
+        semester: "1",
+        amount: detail.amount,
+      });
+    } catch (err) {}
+  };
   let name, value;
 
   const handleInputs = (e) => {
@@ -51,6 +67,9 @@ const Payments3 = () => {
     }
   };
 
+  useEffect(() => {
+    getDetails();
+  }, []);
   return (
     <div className="pay2">
       <Navbar />
@@ -89,6 +108,7 @@ const Payments3 = () => {
                             value={hostfee.name}
                             onChange={handleInputs}
                             placeholder="Your Name"
+                            disabled="true"
                           />
                         </div>
                       </div>
@@ -113,6 +133,7 @@ const Payments3 = () => {
                             value={hostfee.email}
                             onChange={handleInputs}
                             placeholder="Your email"
+                            disabled="true"
                           />
                         </div>
                       </div>
@@ -137,6 +158,7 @@ const Payments3 = () => {
                             value={hostfee.branch}
                             onChange={handleInputs}
                             placeholder="Your branch"
+                            disabled="true"
                           />
                         </div>
                       </div>
@@ -185,6 +207,7 @@ const Payments3 = () => {
                             value={hostfee.amount}
                             onChange={handleInputs}
                             placeholder="Enter Amount"
+                            disabled="true"
                           />
                         </div>
                       </div>
