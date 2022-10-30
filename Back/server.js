@@ -1,7 +1,12 @@
 //require('dotenv').config()
 const dotenv = require("dotenv");
 const express = require("express");
+//const multer = require("multer");
+//const upload = multer({dest:'uploads/'})
 const mongoose = require("mongoose");
+const path = require("path");
+const bodyParser = require("body-parser");
+//const fileRoutes = require("./routes/fileuploadroute");
 const app = express();
 dotenv.config({ path: "./.env" });
 require("./db/connec");
@@ -10,7 +15,9 @@ const cors = require("cors");
 
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
-
+// app.post("/stats", upload.single("uploaded_file"), function (req, res) {
+//   console.log(req.file, req.body);
+// });
 // const Authenticate = require("../middleware/authenticate")
 const User = require("./models/userSchema");
 const loandata = require("./models/loanSchema");
@@ -25,6 +32,8 @@ const feeddata = require("./models/FeedbackSchema");
 const ADMTUTIONFEE = require("./models/AdminstututfeeSchema");
 const ADMHOSTELFEE = require("./models/AdminstuhosfeeSchema");
 const tds = require("./models/tdsSchema");
+const projectfeedt = require("./models/projectcreationSchema");
+//const bodyParser = require("body-parser");
 
 //const tutionRoutes = require('./routes/tution')
 // let alert = require('alert');
@@ -37,6 +46,13 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.download("./messfee.pdf");
 });
+
+// require("./database")();
+app.use(bodyParser.json());
+
+// app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+// app.use("/api", fileRoutes.routes);
 
 app.use(require("./routes/auth"));
 app.use(require("./routes/loandb"));
@@ -51,6 +67,7 @@ app.use(require("./routes/feedbackdb"));
 app.use(require("./routes/Adminstututdb"));
 app.use(require("./routes/Adminstuhosdb"));
 app.use(require("./routes/Sendtds"));
+app.use(require("./routes/projectcreationdb"))
 const PORT = process.env.PORT;
 
 // const middleware = (req,res,next) =>{
@@ -139,6 +156,12 @@ app.get("/fund", (req, res) => {
 // })
 
 // connecting to db
+
+
+
+// if(process.env.NODE_ENV == "production"){
+//   app.use(express.static("Frontend/build"));       //needed for  deployment
+// }
 
 app.listen(process.env.PORT, () => {
   console.log("connected to db & listening on port", process.env.PORT); // with using env
