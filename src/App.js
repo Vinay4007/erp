@@ -75,6 +75,8 @@ import QrM from "./Component/QrM";
 import TDSDETAILS from "./Component/Tdsdetails";
 import SendTDS from "./Component/SendTDS";
 import BalanceSheetGen from "./Component/BalanceSheet";
+import ProjectDET from "./Component/projectcreation";
+
 
 const App = () => {
   return (
@@ -158,6 +160,9 @@ const App = () => {
           <Route path="/tds" component={TDSDETAILS} />
           <Route path="/mailtds" component={SendTDS} />
           <Route path="/bsg" component={BalanceSheetGen} />
+
+
+         <Route path="/projects" component={ProjectDET}/>
         </Router>
       </div>
     </div>
