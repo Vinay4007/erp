@@ -15,7 +15,7 @@ In second terminal run the following command
 - Sandeep
 - Ritesh
 
-##Modules :
+## Modules :
 - 1.) Transactions related to Main or Institute Accounts.
 - 2.) Mess Account.
 - 3.) Employee Advances and Loans.
@@ -27,7 +27,7 @@ In second terminal run the following command
 
 
 
-##Dependencies
+## Dependencies
 
 - 1.)Backend dependencies: 
     - "bcrypt"
@@ -64,13 +64,13 @@ In second terminal run the following command
 
 
 
-##Installation Instructions:
+## Installation Instructions:
 
 Use <npm install> command to install the dependencies
 
 
 
-##Team Member Contributions:
+## Team Member Contributions:
 
 - Vinay   : Backend of all modules
 - Sandeep : Department wise Budget Tracking module and navbar
