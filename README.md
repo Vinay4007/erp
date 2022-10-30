@@ -1,11 +1,11 @@
 # Welcome to ERP
 
 To run the project follow these steps:
-After git clone open two terminals for this directory
-In one terminal goto directory Back and run the following command
-        `npm run dev`
-In second terminal run the following command
-        `npm start`
+- After git clone open two terminals for this directory
+- In one terminal goto directory Back and run the following command
+       - `npm run dev`
+- In second terminal run the following command
+       - `npm start`
 
 
 ## Team Members
