@@ -1,15 +1,18 @@
 # Welcome to ERP
 
 To run the project follow these steps:
-- After git clone open two terminals for this directory
-- In one terminal goto directory Back and run the following command
-       - `npm run dev`
-- In second terminal run the following command
-       - `npm start`
+- After git cloning a folder named `erp` will be created.
+- Then open two terminals with directory as erp folder.
+- In first terminal stay in the erp directory and use the command `npm install` to install node modules. 
+- In second terminal go to Back directory from erp by using command `cd Back` and then use the command `npm install` to install the node modules
+- `After installing the node modules in both the terminals to run the project do the below steps`
+- In the first terminal staying in the erp directory use the command `npm start`
+- In the second terminal staying in the Back director use the command `npm run dev`
+
 
 
 ## Team Members
-- T. Vinay Kumar (c)
+- T. Vinay Kumar
 - Pavan
 - Prakash Deepak
 - Sandeep
