@@ -7,7 +7,7 @@ To run the project follow these steps:
 - In second terminal go to Back directory from erp by using command `cd Back` and then use the command `npm install` to install the node modules
 - `After installing the node modules in both the terminals to run the project do the below steps`
 - In the first terminal staying in the erp directory use the command `npm start`
-- In the second terminal staying in the Back director use the command `npm run dev`
+- In the second terminal staying in the Back directory use the command `npm run dev`
 
 
 
